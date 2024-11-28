@@ -7,7 +7,7 @@ function LandingPage() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src="/public/images/DALL·E 2024-11-28 13.00.06 - A single, detailed and professional logo design for a snow removal website. The logo features a large, stylized snowflake with intricate geometric det.webp" alt="Logo" />
+                    <img src="\snow-removal-app\frontend" alt="Logo" />
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>

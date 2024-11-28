@@ -10,7 +10,7 @@ function MainPage() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src="/images/logo.jpg" alt="Logo" />
+                    <img src="\snow-removal-app\frontend" alt="Logo" />
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>
