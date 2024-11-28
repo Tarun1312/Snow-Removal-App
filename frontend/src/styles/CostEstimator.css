@@ -1,0 +1,22 @@
+.cost-estimator-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.cost-estimator-container h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.cost-estimator-container p {
+    font-size: 18px;
+    color: #333;
+}
+
+.cost-estimator-container button {
+    width: 100%;
+}
