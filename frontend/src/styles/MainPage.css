@@ -1,0 +1,114 @@
+/* Styling for MainPage */
+.main-page {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 15px 30px;
+}
+
+.navbar-logo img {
+    height: 50px;
+}
+
+.navbar-links a, .navbar-auth a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-auth .btn-primary {
+    background: #4CAF50;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url("C:\Users\Tarun\snow-removal-app\frontend\public\images\snow3.jpg") no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn-primary {
+    background: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Services Section */
+.services {
+    padding: 50px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.card h3 {
+    color: #4CAF50;
+}
+
+/* Actionable Cards Section */
+.action-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 50px 0;
+    background: #e9f7ef;
+    text-align: center;
+}
+
+.action-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.action-card h3 {
+    color: #4CAF50;
+}
+
+.action-card p {
+    color: #333;
+    margin-top: 10px;
+}
