@@ -1,25 +1,42 @@
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover-color: #45a049;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --secondary-text-color: #fff;
+    --popup-overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 .booking-page {
     padding: 30px;
-    font-family: Arial, sans-serif;
     background-color: grey;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #4CAF50;
-    
+    color: var(--primary-color);
 }
 
 .booking-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap; /* Adjust layout for smaller screens */
 }
 
 .form-section {
-    width: 65%;
-    background: #f9f9f9;
+    flex: 1;
+    min-width: 300px;
+    max-width: 65%;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,7 +48,7 @@ h1 {
 
 .form-group h2 {
     margin-bottom: 10px;
-    color: #4CAF50;
+    color: var(--primary-color);
 }
 
 .form-row {
@@ -41,51 +58,50 @@ h1 {
     margin-bottom: 10px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
-/* Adjust Textarea Styling */
 textarea {
-    width: 100%; /* Make it take the full width of the parent container */
-    height: 150px; /* Set a larger default height */
-    resize: vertical; /* Allow users to resize the height only */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Ensure padding is included in the element's width and height */
+    height: 150px;
+    resize: vertical;
 }
 
-textarea:focus {
+textarea:focus,
+input:focus,
+select:focus {
     outline: none;
-    border-color: #4CAF50; /* Highlight the border when focused */
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add a subtle glow effect */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 .btn-submit {
-    background: #4CAF50;
-    color: white;
+    background: var(--primary-color);
+    color: var(--secondary-text-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background 0.3s;
 }
 
 .btn-submit:hover {
-    background: #45a049;
+    background: var(--primary-hover-color);
 }
 
 .contact-info {
-    width: 30%;
+    flex: 0.3;
+    min-width: 300px;
     background: #333;
-    color: white;
+    color: var(--secondary-text-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -93,19 +109,120 @@ textarea:focus {
 
 .contact-info h2 {
     margin-bottom: 15px;
-    color: #4CAF50;
+    color: var(--primary-color);
 }
 
 .btn-directions {
-    background: #4CAF50;
-    color: white;
+    background: var(--primary-color);
+    color: var(--secondary-text-color);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
+    transition: background 0.3s;
 }
 
 .btn-directions:hover {
-    background: #45a049;
+    background: var(--primary-hover-color);
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--popup-overlay-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease;
+}
+
+.checkmark {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.popup-content h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.popup-content p {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.popup-content button {
+    margin-top: 20px;
+    background: var(--primary-color);
+    color: var(--secondary-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup-content button:hover {
+    background: var(--primary-hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        background: rgba(0, 0, 0, 0);
+    }
+    to {
+        background: var(--popup-overlay-color);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-section,
+    .contact-info {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-directions {
+        width: 100%;
+    }
 }

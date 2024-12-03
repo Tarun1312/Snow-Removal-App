@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import SubscriptionPage from "./components/SubscriptionPage";
 
 
+
 const isAuthenticated = () => {
     return localStorage.getItem("authToken") !== null;
 };
