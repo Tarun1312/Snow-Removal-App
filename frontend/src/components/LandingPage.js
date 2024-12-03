@@ -7,7 +7,7 @@ function LandingPage() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src="\snow-removal-app\frontend" alt="Logo" />
+                <img src=",,/images/snowlogo.webp" alt="Logo" />
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>

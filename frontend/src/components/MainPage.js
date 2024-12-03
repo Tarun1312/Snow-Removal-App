@@ -10,7 +10,7 @@ function MainPage() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src="\snow-removal-app\frontend" alt="Logo" />
+                <img src="/images/snowlogo.webp" alt="Logo" />
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>
@@ -40,32 +40,50 @@ function MainPage() {
                         <p>$249.99</p>
                         <p>Sidewalk & Walkways Up to 500 sq ft</p>
                         <ul>
-                            <li>Licensed & Insured GreenKeepers</li>
-                            <li>Unlimited visits every month</li>
-                            <li>Automatic Billing</li>
+                        <li>Licensed & Insured GreenKeepers</li>
+                        <li>Unlimited visits every month</li>
+                        <li>Automatic Billing</li>
                         </ul>
+                        <button
+                        className="btn-subscribe"
+                        onClick={() => navigate("/subscribe?plan=frost_guard")}
+                        >
+                        Subscribe
+                        </button>
                     </div>
                     <div className="card">
                         <h3>Blizzard Buster</h3>
                         <p>$299.99</p>
                         <p>Sidewalk, Walkways & Driveway Up to 1500 sq ft</p>
                         <ul>
-                            <li>Licensed & Insured GreenKeepers</li>
-                            <li>Unlimited visits every month</li>
-                            <li>Automatic Billing</li>
+                        <li>Licensed & Insured GreenKeepers</li>
+                        <li>Unlimited visits every month</li>
+                        <li>Automatic Billing</li>
                         </ul>
+                        <button
+                        className="btn-subscribe"
+                        onClick={() => navigate("/subscribe?plan=blizzard_buster")}
+                        >
+                        Subscribe
+                        </button>
                     </div>
                     <div className="card">
                         <h3>Arctic Shield</h3>
                         <p>$329.99</p>
                         <p>Sidewalk, Walkways & Oversized Driveway Up to 2000 sq ft</p>
                         <ul>
-                            <li>Licensed & Insured GreenKeepers</li>
-                            <li>Unlimited visits every month</li>
-                            <li>Automatic Billing</li>
+                        <li>Licensed & Insured GreenKeepers</li>
+                        <li>Unlimited visits every month</li>
+                        <li>Automatic Billing</li>
                         </ul>
+                        <button
+                        className="btn-subscribe"
+                        onClick={() => navigate("/subscribe?plan=arctic_shield")}
+                        >
+                        Subscribe
+                        </button>
                     </div>
-                </div>
+                    </div>
             </section>
 
             {/* Actionable Cards Section */}

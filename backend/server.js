@@ -17,6 +17,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/auth", require("./routes/authRoutes")); // Auth routes
+app.use("/api/subscriptions", require("./routes/subscriptionRoutes")); // Subscription routes
 
 // Start server
 const PORT = process.env.PORT || 5000;

@@ -8,6 +8,8 @@ import Booking from "./components/Booking";
 import CostEstimator from "./components/CostEstimator";
 import Map from "./components/Map";
 import Footer from "./components/Footer";
+import SubscriptionPage from "./components/SubscriptionPage";
+
 
 const isAuthenticated = () => {
     return localStorage.getItem("authToken") !== null;
@@ -41,6 +43,8 @@ function RoutesWithFooter() {
                 <Route path="/booking" element={<ProtectedRoute element={Booking} />} />
                 <Route path="/cost-estimator" element={<ProtectedRoute element={CostEstimator} />} />
                 <Route path="/map" element={<ProtectedRoute element={Map} />} />
+                <Route path="/subscribe" element={<SubscriptionPage />} />
+
             </Routes>
             {!noFooterRoutes.includes(location.pathname) && <Footer />}
         </>
