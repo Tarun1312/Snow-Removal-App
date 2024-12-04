@@ -1,0 +1,36 @@
+.location-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.location-page h1 {
+    color: #28a745;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    max-width: 100%;
+    margin: 0 auto;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.btn-back {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #218838;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/LandingPage.css";
+import Footer from "./Footer"
+
 
 function LandingPage() {    
     return (
@@ -7,13 +9,12 @@ function LandingPage() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-logo">
-                <img src=",,/images/snowlogo.webp" alt="Logo" />
+                <img src="/images/snowlogo.webp" alt="Logo" />
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                </div>
+                    <a href="/location">Location</a>
+                    </div>
                 <div className="navbar-auth">
                     <a href="/login">Login</a>
                     <a href="/register" className="btn-primary">Sign Up</a>
@@ -64,6 +65,8 @@ function LandingPage() {
                     </div>
                 </div>
             </section>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

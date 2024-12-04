@@ -18,6 +18,8 @@ function Payment() {
 
                 <button type="submit">Pay Now</button>
             </form>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

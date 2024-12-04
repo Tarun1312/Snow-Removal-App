@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/MainPage.css";
+import Footer from "./Footer";
 
 function MainPage() {
     const navigate = useNavigate();
@@ -52,8 +53,7 @@ function MainPage() {
                 </div>
                 <div className="navbar-links">
                     <a href="#services">Services</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
+                    <a href="/location">Location</a>
                 </div>
                 <div className="navbar-auth">
                     {isAuthenticated ? (
@@ -202,6 +202,8 @@ function MainPage() {
                     </div>
                 </div>
             )}
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

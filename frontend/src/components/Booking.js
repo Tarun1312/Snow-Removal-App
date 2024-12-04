@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Booking.css";
+import Footer from "./Footer";
+
 
 function Booking() {
     const [formData, setFormData] = useState({
@@ -171,6 +173,8 @@ function Booking() {
                     </div>
                 </div>
             )}
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }

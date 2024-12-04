@@ -12,10 +12,13 @@ import Register from "./components/Register";
 import MainPage from "./components/MainPage";
 import Booking from "./components/Booking";
 import CostEstimator from "./components/CostEstimator";
-import Map from "./components/Map";
+import Map from "./components/LocationPage";
 import Footer from "./components/Footer";
 import SubscriptionPage from "./components/SubscriptionPage";
-import AdminPage from "./components/AdminDashBoard"; // Import Admin Page
+import AdminPage from "./components/AdminDashBoard";
+import LocationPage from "./components/LocationPage";
+
+
 
 // Function to check if a user is authenticated
 const isAuthenticated = () => {
@@ -64,8 +67,8 @@ function RoutesWithFooter() {
                 <Route path="/map" element={<ProtectedRoute element={Map} />} />
                 <Route path="/subscribe" element={<SubscriptionPage />} />
                 <Route path="/admin" element={<AdminPage />} />
+                <Route path="/location" element={<LocationPage />} />
             </Routes>
-            {!noFooterRoutes.includes(location.pathname) && <Footer />}
         </>
     );
 }
