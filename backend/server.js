@@ -16,14 +16,10 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/bookings", require("./routes/bookingRoutes"));
-app.use("/api/subscriptions", require("./routes/subscriptionRoutes"));
+app.use("/api/auth", require("./routes/authRoutes")); // Auth routes
+app.use("/api/bookings", require("./routes/bookingRoutes")); // Booking routes
+app.use("/api/subscriptions", require("./routes/subscriptionRoutes")); // Subscription routes
 
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-console.log(require("./routes/subscriptionRoutes"));
-
-console.log(typeof require("./routes/subscriptionRoutes")); // Should log "function" or "object"

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/LandingPage.css";
 
-function LandingPage() {
+function LandingPage() {    
     return (
         <div className="landing-page">
             {/* Navbar */}

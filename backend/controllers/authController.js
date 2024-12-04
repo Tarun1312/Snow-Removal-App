@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const Booking = require("../models/Booking");
 
 // Register a new user
 const registerUser = async (req, res) => {
@@ -36,13 +37,45 @@ const loginUser = async (req, res) => {
         const isPasswordMatch = await bcrypt.compare(password, user.password);
         if (!isPasswordMatch) return res.status(400).json({ error: "Invalid credentials!" });
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "10min" });
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-        res.status(200).json({ message: "Login successful!", token });
+        res.status(200).json({
+            message: "Login successful!",
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role, // Include the role in the response
+            },
+        });
     } catch (error) {
         console.error("Error in loginUser:", error.message);
         res.status(500).json({ error: "Login failed!" });
     }
 };
 
-module.exports = { registerUser, loginUser };
+// Get user details
+const getUserDetails = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select("-password");
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        const appointments = await Booking.find({ userId: req.user.id });
+
+        res.status(200).json({
+            user: {
+                name: user.name,
+                email: user.email,
+                appointments,
+            },
+        });
+    } catch (error) {
+        console.error("Error fetching user details:", error.message);
+        res.status(500).json({ error: "Server error" });
+    }
+};
+
+module.exports = { registerUser, loginUser, getUserDetails };

@@ -1,35 +1,81 @@
-.dashboard-container {
-    background-color: white;
+.admin-page {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 50px;
 }
 
-.dashboard-container h2 {
-    font-size: 28px;
+.admin-header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
     margin-bottom: 20px;
-    color: #4CAF50;
 }
 
-.dashboard-container .stats {
-    display: flex;
-    justify-content: space-between;
+.admin-section {
     margin-bottom: 30px;
 }
 
-.stats .stat-card {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.stat-card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #333;
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.admin-table th {
+    background-color: #333;
+    color: white;
+}
+
+.btn-view,
+.btn-delete,
+.btn-update,
+.btn-close {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-view {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-update {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
 }

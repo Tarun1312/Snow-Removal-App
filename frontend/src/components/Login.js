@@ -8,7 +8,6 @@ function Login() {
         email: "",
         password: "",
     });
-
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -19,9 +18,19 @@ function Login() {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:5000/api/auth/login", credentials);
-            localStorage.setItem("authToken", response.data.token); // Store the auth token for protected routes
+
+            const { token, user } = response.data;
+            localStorage.setItem("authToken", token); // Store the auth token
+            localStorage.setItem("userRole", user.role); // Store the user role
+
             alert(response.data.message || "Login successful!");
-            navigate("/main"); // Redirect to the main page on success
+
+            // Redirect based on user role
+            if (user.role === "admin") {
+                navigate("/admin"); // Redirect to admin page if user is admin
+            } else {
+                navigate("/main"); // Redirect to main page for regular users
+            }
         } catch (error) {
             console.error("Login error:", error.response?.data || error.message);
             alert(error.response?.data?.error || "Login failed!");
