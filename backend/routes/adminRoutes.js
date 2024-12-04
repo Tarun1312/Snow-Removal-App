@@ -1,21 +1,20 @@
 const express = require("express");
-const {
-    getAllBookings,
-    deleteBooking,
-    updateBooking,
-    getAllSubscriptions,
-    updateSubscriptionPlan,
-} = require("../controllers/adminController");
+const { getAllBookings, deleteBooking, getAllSubscriptions, cancelSubscription } = require("../controllers/adminController");
 const authMiddleware = require("../middleware/authMiddleware");
-const adminMiddleware = require("../middleware/adminMiddleware"); // Custom middleware to verify admin role
+const adminMiddleware = require("../middleware/adminMiddleware");
 
 const router = express.Router();
 
-// Routes
-router.get("/bookings", authMiddleware, adminMiddleware, getAllBookings); // View all bookings
-router.delete("/bookings/:id", authMiddleware, adminMiddleware, deleteBooking); // Delete booking
-router.put("/bookings/:id", authMiddleware, adminMiddleware, updateBooking); // Update booking
-router.get("/subscriptions", authMiddleware, adminMiddleware, getAllSubscriptions); // View subscriptions
-router.put("/subscriptions/:planId", authMiddleware, adminMiddleware, updateSubscriptionPlan); // Update subscription plan
+// Route to get all bookings
+router.get("/bookings", authMiddleware, adminMiddleware, getAllBookings);
+
+// Route to delete a booking
+router.delete("/bookings/:id", authMiddleware, adminMiddleware, deleteBooking);
+
+// Route to get all subscriptions
+router.get("/subscriptions", authMiddleware, adminMiddleware, getAllSubscriptions);
+
+// Route to cancel a subscription
+router.delete("/subscriptions/:id", authMiddleware, adminMiddleware, cancelSubscription);
 
 module.exports = router;

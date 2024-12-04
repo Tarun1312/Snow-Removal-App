@@ -1,81 +1,158 @@
-.admin-page {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    padding: 20px;
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 40px 60px;
+    min-height: 100vh;
 }
 
-.admin-header {
+.admin-dashboard h1 {
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    color: #28a745;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Section Styling */
 .admin-section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.admin-table {
+.admin-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    border-left: 4px solid #28a745;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.admin-section table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.admin-table th,
-.admin-table td {
-    border: 1px solid #ddd;
+.admin-section table th,
+.admin-section table td {
     text-align: left;
-    padding: 8px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    vertical-align: middle;
 }
 
-.admin-table th {
-    background-color: #333;
-    color: white;
+.admin-section table th {
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.btn-view,
-.btn-delete,
-.btn-update,
-.btn-close {
-    padding: 5px 10px;
-    margin: 5px;
+.admin-section table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.admin-section table tr:hover {
+    background-color: #e9f7e9;
+    transition: background-color 0.3s ease;
+}
+
+.admin-section table td {
+    color: #555;
+}
+
+/* Action Buttons */
+.admin-section .btn-delete,
+.admin-section .btn-cancel {
+    background-color: #28a745;
+    color: #fff;
     border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.btn-view {
-    background-color: #5bc0de;
-    color: white;
+.admin-section .btn-delete:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
 }
 
-.btn-delete {
-    background-color: #d9534f;
-    color: white;
+.admin-section .btn-cancel:hover {
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
-.btn-update {
-    background-color: #5cb85c;
-    color: white;
+.admin-section .btn-delete {
+    background-color: #dc3545;
+    margin-left: 10px;
 }
 
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
+/* Empty State Styling */
+.admin-section p {
+    font-size: 1.1rem;
+    color: #888;
+    margin: 20px 0;
     text-align: center;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.footer a {
+    color: #81c784;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Add Responsive Design */
+@media (max-width: 768px) {
+    .admin-dashboard {
+        padding: 20px 20px;
+    }
+
+    .admin-dashboard h1 {
+        font-size: 2rem;
+    }
+
+    .admin-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .admin-section table th,
+    .admin-section table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .admin-section .btn-delete,
+    .admin-section .btn-cancel {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }
