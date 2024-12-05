@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Booking.css";
+import { Link } from 'react-router-dom';
 
 
 
@@ -146,7 +147,7 @@ function Booking() {
                         Saturday: 9:00 AM - 5:00 PM <br />
                         Sunday: Closed
                     </p>
-                    <button className="btn-directions">Get Directions</button>
+                    <Link to="/location" className="btn-directions">Get Directions</Link>
                 </div>
             </div>
 
