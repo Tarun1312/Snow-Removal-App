@@ -13,12 +13,10 @@ import MainPage from "./components/MainPage";
 import Booking from "./components/Booking";
 import CostEstimator from "./components/CostEstimator";
 import Map from "./components/LocationPage";
-import Footer from "./components/Footer";
 import SubscriptionPage from "./components/SubscriptionPage";
 import AdminPage from "./components/AdminDashBoard";
 import LocationPage from "./components/LocationPage";
-
-
+import ForgotPassword from "./components/ForgotPassword";
 
 // Function to check if a user is authenticated
 const isAuthenticated = () => {
@@ -45,31 +43,21 @@ function App() {
     return (
         <Router>
             <div className="app-wrapper">
-                <RoutesWithFooter />
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/main" element={<ProtectedRoute element={MainPage} />} />
+                    <Route path="/booking" element={<ProtectedRoute element={Booking} />} />
+                    <Route path="/cost-estimator" element={<ProtectedRoute element={CostEstimator} />} />
+                    <Route path="/map" element={<ProtectedRoute element={Map} />} />
+                    <Route path="/subscribe" element={<SubscriptionPage />} />
+                    <Route path="/admin" element={<AdminPage />} />
+                    <Route path="/location" element={<LocationPage />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                </Routes>
             </div>
         </Router>
-    );
-}
-
-function RoutesWithFooter() {
-    const location = useLocation();
-    const noFooterRoutes = ["/login", "/register"];
-
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/main" element={<ProtectedRoute element={MainPage} />} />
-                <Route path="/booking" element={<ProtectedRoute element={Booking} />} />
-                <Route path="/cost-estimator" element={<ProtectedRoute element={CostEstimator} />} />
-                <Route path="/map" element={<ProtectedRoute element={Map} />} />
-                <Route path="/subscribe" element={<SubscriptionPage />} />
-                <Route path="/admin" element={<AdminPage />} />
-                <Route path="/location" element={<LocationPage />} />
-            </Routes>
-        </>
     );
 }
 

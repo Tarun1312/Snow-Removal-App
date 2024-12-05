@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/LocationPage.css";
-import Footer from "./Footer";
+
 
 function LocationPage() {
     const navigate = useNavigate();
@@ -25,8 +25,7 @@ function LocationPage() {
             <button className="btn-back" onClick={() => navigate(-1)}>
                 Back
             </button>
-            {/* Footer */}
-            <Footer />
+           
         </div>
     );
 }

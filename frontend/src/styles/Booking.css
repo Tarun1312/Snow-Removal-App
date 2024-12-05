@@ -7,16 +7,15 @@
     --popup-overlay-color: rgba(0, 0, 0, 0.5);
 }
 
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
 .booking-page {
     padding: 30px;
     background-color: grey;
+    min-height: 100vh; /* Ensure the page height covers the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -30,6 +29,8 @@ h1 {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap; /* Adjust layout for smaller screens */
+    width: 100%;
+    max-width: 1200px; /* Restrict maximum width */
 }
 
 .form-section {

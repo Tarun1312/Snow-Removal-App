@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/Subscription.css";
 
 function SubscriptionPage() {
     const location = useLocation();
+    const navigate = useNavigate();
     const queryParams = new URLSearchParams(location.search);
     const selectedPlan = queryParams.get("plan");
-    const planPrice = {
-        frost_guard: "$249.99",
-        blizzard_buster: "$299.99",
-        arctic_shield: "$329.99",
-    }[selectedPlan] || "N/A";
+
+    // Define plan details
+    const planDetails = {
+        frost_guard: { name: "Frost Guard", price: 249.99 },
+        blizzard_buster: { name: "Blizzard Buster", price: 299.99 },
+        arctic_shield: { name: "Arctic Shield", price: 329.99 },
+    }[selectedPlan] || { name: "Invalid Plan", price: 0 };
 
     const [paymentDetails, setPaymentDetails] = useState({
         cardNumber: "",
@@ -24,9 +28,45 @@ function SubscriptionPage() {
         setPaymentDetails({ ...paymentDetails, [name]: value });
     };
 
-    const handleSubscribe = (e) => {
+    const handleSubscribe = async (e) => {
         e.preventDefault();
-        alert(`Subscribed to ${selectedPlan} successfully!`);
+
+        if (planDetails.name === "Invalid Plan") {
+            alert("Please select a valid subscription plan.");
+            return;
+        }
+
+        const token = localStorage.getItem("authToken");
+
+        const subscriptionData = {
+            planName: planDetails.name, // Plan name from normalized data
+            cardNumber: paymentDetails.cardNumber,
+            expiryDate: paymentDetails.expiryDate,
+            cvv: paymentDetails.cvv,
+        };
+
+        try {
+            const response = await axios.post(
+                "http://localhost:5000/api/subscriptions/subscribe",
+                subscriptionData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+
+            if (response.status === 201) {
+                alert(`Subscribed to ${planDetails.name} successfully!`);
+                navigate("/main"); // Redirect on success
+            } else {
+                alert("Subscription failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error subscribing:", error.response?.data || error.message);
+            alert(error.response?.data?.error || "An error occurred during subscription.");
+        }
     };
 
     return (
@@ -37,12 +77,12 @@ function SubscriptionPage() {
                     <div className="subscription-details">
                         <h2>Subscription Details</h2>
                         <div className="subscription-info">
-                            <p><strong>Plan:</strong> {selectedPlan}</p>
-                            <p><strong>Price:</strong> {planPrice}</p>
+                            <p><strong>Plan:</strong> {planDetails.name}</p>
+                            <p><strong>Price:</strong> ${planDetails.price.toFixed(2)}</p>
                         </div>
                         <div className="total-amount">
                             <p>Total Amount:</p>
-                            <h1>{planPrice}</h1>
+                            <h1>${planDetails.price.toFixed(2)}</h1>
                         </div>
                     </div>
 

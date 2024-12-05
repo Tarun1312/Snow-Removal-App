@@ -1,21 +1,26 @@
-/* General Styling */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url("C:\Users\skanw\OneDrive\Documents\GitHub\Snow-Removal-App\frontend\public\images\wWKnpj.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
+
 
 /* Login Page */
 .login-page {
+    font-family: Arial, sans-serif;
+    background: url("C:\Users\Tarun\Documents\GitHub\Snow-Removal-App\frontend\public\images\wWKnpj.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 830px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
-
+  
+.background-overlay {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
+    width: 100%;
+    height: 820px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 .login-container {
     background: #5c4b7f;
     padding: 40px 30px;

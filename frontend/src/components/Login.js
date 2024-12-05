@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
+
 function Login() {
     const [credentials, setCredentials] = useState({
         email: "",
@@ -38,6 +39,7 @@ function Login() {
     };
 
     return (
+        <div>
         <div className="login-page">
             <div className="login-container">
                 <h2>LOGIN</h2>
@@ -65,7 +67,10 @@ function Login() {
                     <a href="/forgot-password">Forgot Password?</a>
                 </div>
             </div>
+          
         </div>
+    
+    </div>
     );
 }
 

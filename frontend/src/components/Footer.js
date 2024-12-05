@@ -13,13 +13,7 @@ function Footer() {
                 </div>
                 <div className="footer-section">
                     <h3>About the company</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.</p>
-                    <div className="social-icons">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-linkedin"></i></a>
-                        <a href="#"><i className="fab fa-github"></i></a>
-                    </div>
+                    <p>BEST SNOW REMOVAL SERVICE </p>
                 </div>
             </div>
         </footer>

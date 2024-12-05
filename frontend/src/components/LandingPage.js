@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/LandingPage.css";
-import Footer from "./Footer"
-
+import Footer from "./Footer";
 
 function LandingPage() {    
     return (
@@ -65,8 +64,8 @@ function LandingPage() {
                     </div>
                 </div>
             </section>
-            {/* Footer */}
-            <Footer />
+            < Footer/>
+            
         </div>
     );
 }

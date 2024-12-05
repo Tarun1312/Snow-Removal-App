@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/MainPage.css";
 import Footer from "./Footer";
 
+
 function MainPage() {
     const navigate = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -58,16 +59,20 @@ function MainPage() {
                 <div className="navbar-auth">
                     {isAuthenticated ? (
                         <div className="user-info">
-                            <button
-                                className="btn-user"
-                                onClick={() => setShowPopup(true)}
-                            >
-                                User
-                            </button>
-                            <button className="btn-logout" onClick={handleLogout}>
-                                Logout
-                            </button>
-                        </div>
+                        <button
+                            className="btn-user"
+                            onClick={() => setShowPopup(true)}
+                        >
+                            User
+                        </button>
+                        <button
+                            className="btn-logout"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </div>
+                    
                     ) : (
                         <>
                             <a href="/login">Login</a>
@@ -183,10 +188,10 @@ function MainPage() {
                                 <ul>
                                     {userDetails.appointments && userDetails.appointments.length > 0 ? (
                                         userDetails.appointments.map((appointment, index) => (
-                                            <li key={index}>
+                                            <ul key={index}>
                                                 <strong>Service:</strong> {appointment.serviceType} <br />
                                                 <strong>Date:</strong> {new Date(appointment.appointmentDate).toLocaleDateString()} <br />
-                                            </li>
+                                            </ul>
                                         ))
                                     ) : (
                                         <li>No appointments</li>
@@ -202,8 +207,7 @@ function MainPage() {
                     </div>
                 </div>
             )}
-            {/* Footer */}
-            <Footer />
+           < Footer/>
         </div>
     );
 }
