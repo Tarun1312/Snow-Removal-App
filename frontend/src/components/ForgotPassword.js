@@ -28,7 +28,7 @@ function ForgotPassword() {
 
     return (
         <div className="forgot-password-page">
-            <div className="form-container">
+            <div className="form-container1">
                 <h1 className="form-title">Reset Your Password</h1>
                 <p className="instructions">
                     Please enter your email and new password below to reset your password.

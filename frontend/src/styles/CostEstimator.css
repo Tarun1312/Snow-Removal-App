@@ -1,8 +1,5 @@
-
-
 /* Hero Section */
 .hero {
-    
     text-align: center;
     color: white;
     padding: 50px 20px;
@@ -22,8 +19,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    min-height: calc(100vh - 200px); /* Adjust height dynamically */
     background: #f9f9f9;
+    padding: 20px;
 }
 
 .form-card {
@@ -80,7 +78,6 @@
 .btn-primary:hover {
     background: #45a049;
 }
-
 
 /* Cost Result Section */
 .cost-result {
