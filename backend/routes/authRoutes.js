@@ -1,24 +1,33 @@
-const express = require("express");
+const express = require("express"); // Import express framework
 const {
-    registerUser,
-    loginUser,
-    getUserDetails,
-    forgotPassword, // Add forgot password controller
+    registerUser, // Controller to handle user registration
+    loginUser, // Controller to handle user login
+    getUserDetails, // Controller to fetch user details (protected route)
+    forgotPassword, // Controller to handle password reset
 } = require("../controllers/authController");
-const authMiddleware = require("../middleware/authMiddleware");
 
-const router = express.Router();
+const authMiddleware = require("../middleware/authMiddleware"); // Middleware to verify user authentication
 
-// Register route
+const router = express.Router(); // Create a new router instance
+
+// Route to register a new user
+// Endpoint: POST /api/auth/register
+// Public route - does not require authentication
 router.post("/register", registerUser);
 
-// Login route
+// Route to log in a user
+// Endpoint: POST /api/auth/login
+// Public route - does not require authentication
 router.post("/login", loginUser);
 
-// User details route (protected)
+// Route to fetch user details
+// Endpoint: GET /api/auth/user-details
+// Protected route - requires user to be authenticated
 router.get("/user-details", authMiddleware, getUserDetails);
 
-// Forgot Password route
+// Route to handle forgot password
+// Endpoint: POST /api/auth/forgot-password
+// Public route - does not require authentication
 router.post("/forgot-password", forgotPassword);
 
-module.exports = router;
+module.exports = router; // Export the router for use in the main application
